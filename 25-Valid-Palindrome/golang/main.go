@@ -8,13 +8,11 @@ import (
 
 func isPalindrome(s string) bool {
 	nonAlphaNumericRegex := regexp.MustCompile(`[^a-zA-Z0-9]+`)
-	s = strings.ToLower(nonAlphaNumericRegex.ReplaceAllString(s, ""))
+	str := strings.ToLower(nonAlphaNumericRegex.ReplaceAllString(s, ""))
 
 	j := 0
-
-	for i := len(s) - 1; i > 0; i-- {
-		fmt.Println(s[j], s[i])
-		if s[i] != s[j] {
+	for i := len(str) - 1; i > 0; i-- {
+		if str[i] != str[j] {
 			return false
 		}
 		j++
@@ -24,8 +22,8 @@ func isPalindrome(s string) bool {
 }
 
 func main() {
-	// palindrome := "A man, a plan, a canal: Panama"
-	palindrome := "race a car"
+	palindrome := "A man, a plan, a canal: Panama"
+	// palindrome := "race a car"
 
 	fmt.Print(isPalindrome(palindrome))
 }
