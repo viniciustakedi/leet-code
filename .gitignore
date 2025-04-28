@@ -22,3 +22,5 @@ target/
 *.swo
 *.bak
 *.orig
+
+.vscode
